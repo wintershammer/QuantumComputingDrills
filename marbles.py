@@ -58,7 +58,8 @@ def marbles(v,m,steps):
     
 
 
-    
+########### Figure 3.3 ################
+
 boolAdjM = [[0 for i in range(6)] for j in range(6)]
 
 boolAdjM[5][0] = 1
@@ -70,5 +71,35 @@ boolAdjM[2][5] = 1
 
 stateV = [6,2,1,5,3,10]
 
+print("\nState of System 3.3 after 1 step:")
+pprint.pprint(marbles(stateV,boolAdjM,1))
 
-pprint.pprint(marbles(stateV,boolAdjM,3)) #state of marble system after 3 steps
+print("\nState of System 3.3 after 2 steps:")
+pprint.pprint(marbles(stateV,boolAdjM,2))
+
+print("\nState of System 3.3 after 3 steps:")
+pprint.pprint(marbles(stateV,boolAdjM,3))
+
+
+
+########### Figure 3.12 ################
+boolAdjM = [[0 for i in range(9)] for j in range(9)]
+
+boolAdjM[0][1] = 1
+boolAdjM[1][0] = 1
+boolAdjM[3][3] = 1
+boolAdjM[5][2] = 1
+boolAdjM[8][5] = 1
+boolAdjM[8][8] = 1
+boolAdjM[8][7] = 1
+boolAdjM[7][4] = 1
+boolAdjM[7][6] = 1
+
+
+stateV = [1,1,1,1,1,1,1,1,1]
+
+print("\nState of System 3.12 after one step:")
+pprint.pprint(marbles(stateV,boolAdjM,1)) # 0 and 1 exchange their marbles, 3 just stays the same  and everything else accumulates to 8
+print("\nState of System 3.12 after two steps:")
+pprint.pprint(marbles(stateV,boolAdjM,2))
+
